@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cocacola WebSite Responsive</title>
+
+    <!-- link Swiper-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <!-- link css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Red circle -->
+    <section>
+      <div class="circle"></div>
+      <!-- Logo & Navigation -->
+      <header>
+        <a href="#"><img src="./src/images/logo.png" alt="logo image" class="logo"/></a>
+        <div class="toggle" onclick="toggleMenu()"></div>
+        <ul class="navigation">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">What's New</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </header>
+      <!-- Content-->
+      <div class="content">
+        <div class="textBox">
+          <h2>Taste The Feeling</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+            beatae fugiat nobis omnis modi debitis deserunt quam laborum
+            perferendisLorem ipsum dolor sit amet consectetur adipisicing elit.
+            Aperiam beatae fugiat nobis omnis modi debitis deserunt quam laborum
+            perferendis.
+          </p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="imgBox">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./src/images/cocacola1.png" alt="photo cocacola1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./src/images/cocacola2.png" alt="photo cocacola2" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./src/images/cocacola3.png" alt="photo cocacola3" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./src/images/cocacola4.png" alt="photo cocacola4" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./src/images/cocacola5.png" alt="photo cocacola5" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./src/images/cocacola6.png" alt="photo cocacola6" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="sci">
+        <li>
+          <a href="#"><img src="./src/images/facebook.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./src//images/twitter.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./src/images/instagram.png" alt="" /></a>
+        </li>
+      </ul>
+    </section>
+    <!-- Swiper js-->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper('.mySwiper', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+          rotate: 0,
+          stretch: 0,
+          depth: 200,
+          modifier: 1,
+          slideShadows: true
+        },
+        pagination: {
+          el: '.swiper-pagination'
+        },
+        loop: true
+      });
+
+      // função que vai adicionar/remover a class 'active' em .toggle e .navigation 
+      function toggleMenu() {
+        const menuToggle = document.querySelector('.toggle');
+        const navigation = document.querySelector('.navigation');
+        menuToggle.classList.toggle('active');
+        navigation.classList.toggle('active');
+      }
+
+    </script>
+  </body>
+</html>
